@@ -1,0 +1,149 @@
+body {
+    background-color: rgb(248, 248, 248);
+    font-family: Arial, sans-serif;
+
+    overflow: scroll;
+  }
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Default background color */
+  color: #ffffff; /* Default text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+}
+
+button:hover {
+  background-color: #0056b3; /* New background color on hover */
+  color: #ffffff; /* New text color on hover */
+}
+thead{
+  background-color: black;
+}
+#roster{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#sort{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+#sort form{
+  padding-left: 5px;
+}
+
+.form-content h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height:60px;
+  background-color: rgb(1, 58, 5);
+  color: white;
+  text-align: center;
+}
+#navbar{
+  background-color: rgb(1, 58, 5);
+}
+#navbar a{
+  color: white;
+}
+#navbar-nav a{
+  color: white;
+}
+
+#lcontent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#carouselExampleIndicators{
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+#carousel-item img{
+  height: 20em;
+
+}
+
+body{
+  background-image: url('/coreApp/static/images/mdg.jpg.avif');
+  /* Additional styles */
+  width: 100%;
+  height: 100vh;
+}
+#results{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+  padding: 30px;
+
+  background-image: url('/coreApp/static/images/image3.jpeg');
+  /* Adjust background image properties */
+  background-size: cover; /* Cover the entire element */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the background image */
+  background-color: rgb(255, 255, 255);
+  background-blend-mode: multiply;
+}
+#res{
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.761); /* Transparent white */
+  padding: 50px;
+  width: 60%;
+
+}
+
+/* ADMIN PAGE */
+.landingcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+}
+
+h3 {
+  color: #333;
+}
+
+.button-primary {
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: #0056b3;
+}

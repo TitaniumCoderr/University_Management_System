@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div id="lcontent">
+    <h1>WELCOME TO CLARKSON UNIVERSITY UMS</h1>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" id="carousel-inner">
+            <div class="carousel-item active" id="carousel-item">
+                <img class="d-block " src="{% static 'images/image1.jpeg' %}" alt="First slide" >
+            </div>
+            <div class="carousel-item" id="carousel-item" >
+                <img class="d-block " src="{% static 'images/image3.jpeg' %}" alt="Third slide" >
+            </div>
+        </div>
+        <!-- Add carousel controls -->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div id="about">
+        <h2>About Clarkson University UMS</h2>
+        <p>Clarkson University UMS (University Management System) is a comprehensive platform designed to streamline various administrative and academic processes within the university.</p>
+        <p>Our mission is to provide efficient and effective tools for faculty, staff, and students to manage their academic and administrative tasks seamlessly.</p>
+    </div>
+
+    <div id="features">
+        <h2>Key Features</h2>
+        <ul>
+            <li>Course Registration</li>
+            <li>Grade Management</li>
+            <li>Attendance Tracking</li>
+            <li>Financial Aid Management</li>
+            <li>Student Information System</li>
+            <li>Faculty Dashboard</li>
+            <li>And much more...</li>
+        </ul>
+    </div>
+
+    <div id="call-to-action">
+        <h2>Get Started Today!</h2>
+        <p>Experience the convenience and efficiency of Clarkson University UMS. Sign up now to access all the features and simplify your academic journey.</p>
+        <a href="#" class="btn btn-primary">Sign Up</a>
+    </div>
+</div>
+
+{% endblock %}

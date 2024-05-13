@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Page{% endblock %}
+{% block content %}
+<div class="landingcontainer">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/coreApp/static/images/prof.jpeg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="font-weight: bold;">Create List of Professors</h5>
+          <p class="card-text">Create a comprehensive list of professors for administrative purposes. This action generates a report containing detailed information about all professors in the university.</p>
+          <form method="post" action="{% url 'coreApp:prof_stats' %}">
+            {% csrf_token %}
+            <!-- Include any additional form fields here if needed -->
+            <button class="button-primary" type="submit">Create</button>
+        </form>        
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/coreApp/static/images/Clarkson.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="font-weight: bold;">Generate Salaries By Department</h5>
+          <p class="card-text">Generate salary statistics by department to analyze the distribution of salaries among different academic departments. This action helps in budget planning and resource allocation.</p>
+          <form method="post" action="{% url 'coreApp:salary_statistics_by_department' %}">
+            {% csrf_token %}
+            <!-- Include any additional form fields here if needed -->
+            <button class="button-primary" type="submit">Generate</button>
+        </form>        
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/coreApp/static/images/sumona-mondal_1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="font-weight: bold;">Search for specific Professor</h5>
+        <p class="card-text"></p>Perform a search to find information about a specific professor. This action allows you to retrieve performance data, teaching assignments, and other relevant details.</p>
+          <form method="post" action="{% url 'coreApp:performance' %}">
+            {% csrf_token %}
+            <!-- Include any additional form fields here if needed -->
+            <button class="button-primary" type="submit">Search</button>
+        </form>        
+        </div>
+    </div>
+
+
+    
+    
+   
+
+{% endblock %}

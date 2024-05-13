@@ -1,0 +1,52 @@
+{%extends 'base.html'%}
+
+{% block title %}SProfessor Section{% endblock %}
+
+{% block content %}
+<div class="form-content">
+    <h3>List Course Sections</h3>
+    <form method="post" action="{% url 'coreApp:professor_sections' %}">
+        {% csrf_token %}
+        
+        {{form.as_p}}
+        <button type="submit">SUBMIT</button>
+    </form> <br>
+    
+</div>
+<div class="dark-overlay" id="results">
+    <div id="res">
+
+{% if sec_result %}
+<h2 style="text-align: center;">Course Section Info</h2>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Course ID</th>
+                <th>Section ID</th>
+                <th>Semester</th>
+                <th>Year</th>
+                <th>Capacity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for section_info in sec_result %}
+                <tr>
+                    <td>{{ section_info.course_id }}</td>
+                    <td>{{ section_info.sec_id }}</td>
+                    <td>{{ section_info.semester }}</td>
+                    <td>{{ section_info.year }}</td>
+                    <td>{{ section_info.capacity }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{%else%}
+    <br>
+    <div class="alert alert-danger" role="alert">
+        No Information Found!!!
+  </div>
+
+{% endif %}
+</div>
+</div>
+{% endblock %}

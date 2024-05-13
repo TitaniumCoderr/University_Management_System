@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Roster{% endblock %}
+
+{% block content %}
+<div id="roster">
+    
+    <div id="sort">
+        <form method="post" action="{% url 'coreApp:sort_prof_name' %}">
+            {% csrf_token %}
+            <!-- Include any additional form fields here if needed -->
+            <button type="submit">Sort By Name</button>
+        </form>
+        <form method="post" action="{% url 'coreApp:sort_prof_dept' %}">
+            {% csrf_token %}
+            <!-- Include any additional form fields here if needed -->
+            <button type="submit">Sort By Department</button>
+        </form>
+        <form method="post" action="{% url 'coreApp:sort_prof_salary' %}">
+            {% csrf_token %}
+            <!-- Include any additional form fields here if needed -->
+            <button type="submit">Sort By Salary</button>
+        </form>
+    </div>
+</div>
+
+<div class="dark-overlay" id="results">
+    <div id="res">
+        <h2 style="text-align: center;">Instructors </h2>
+    <table class="table table-hover table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pro in prof %}
+                <tr>
+                    <td>{{ pro.id }}</td>
+                    <td>{{ pro.name }}</td>
+                    <td>{{ pro.dept_name }}</td>
+                    <td>{{ pro.salary }}</td>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+
+{% endblock %}
+
+

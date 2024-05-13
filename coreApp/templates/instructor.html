@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Instructor Page{% endblock %}
+{% block content %}
+<div class="landingcontainer">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/coreApp/static/images/Capstone_Course.jpeg.jpg.webp" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="font-weight: bold;">List Course Sections</h5>
+          <p class="card-text">List all course sections available in the university's database. This action provides an overview of current course offerings and enrollment status.</p>
+          <form method="post" action="{% url 'coreApp:professor_sections' %}">
+            {% csrf_token %}
+            <!-- Include any additional form fields here if needed -->
+            <button class="button-primary" type="submit">Generate List</button>
+        </form>        
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/coreApp/static/images/85.jpeg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="font-weight: bold;">List Students</h5>
+          <p class="card-text">List all students currently enrolled in the university. This action provides detailed information about each student, including personal....</p>
+          <form method="post" action="{% url 'coreApp:student_list' %}">
+            {% csrf_token %}
+            <!-- Include any additional form fields here if needed -->
+            <button class="button-primary" type="submit">Generate List</button>
+        </form>        
+        </div>
+    </div>
+</div>
+
+{% endblock %}

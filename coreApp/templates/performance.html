@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+
+{% block title %}Salary Stats{% endblock %}
+
+{% block content %}
+<div class="form-content">
+    <h3>Seach Instructor</h3>
+    <form method="post" action="{% url 'coreApp:performance' %}">
+        {% csrf_token %}
+        
+        {{form.as_p}}
+        <button type="submit">SUBMIT</button>
+    </form>  <br>  
+</div>
+<div class="dark-overlay" id="results">
+    <div id="res">
+        <h2 style="text-align: center;">Instructor Info</h2>
+        {%if result != -1%}
+        <p>ID: {{id}}</p>
+        <p>Name: {{name}}</p>
+        <p>Semester: {{semester}}</p>
+        <p>Year: {{year}}</p>
+        <p> No. of section taught: {{row_section}}</p>
+        <p>Capacity: {{row_capacity}}</p>
+        <p> Funding: ${{funding}}</p>
+        <p>Publishing: {{publishing}}</p>
+    {%else%}
+        <br>
+        <div class="alert alert-danger" role="alert">
+            No Information Found!!!
+        </div>
+
+    {%endif%}
+    </div>
+    
+</div>
+
+
+{% endblock %}

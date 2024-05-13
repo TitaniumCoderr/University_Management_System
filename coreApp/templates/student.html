@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Student List{% endblock %}
+{% block content %}
+<form method="post" action="{% url 'coreApp:course_section' %}">
+    {% csrf_token %}
+    <!-- Include any additional form fields here if needed -->
+    <button type="submit">course_section</button>
+</form>
+
+{% endblock %}

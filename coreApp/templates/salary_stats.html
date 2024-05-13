@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Salary Stats{% endblock %}
+{% block content %}
+<div class="dark-overlay" id="results">
+<div id="res">
+    <h2 style="text-align: center;">Salary Stats by Department</h2>
+    <table class="table table-hover table-bordered"">
+        <thead>
+            <tr>
+                <th>Department</th>
+                <th>Minimum Salary</th>
+                <th>Maximum Salary</th>
+                <th>Average Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stat in salary_stats_by_dept %}
+                <tr>
+                    <td>{{ stat.dept_name }}</td>
+                    <td>${{ stat.min_salary }}</td>
+                    <td>${{ stat.max_salary }}</td>
+                    <td>${{ stat.avg_salary|floatformat:2 }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+{% endblock %}
